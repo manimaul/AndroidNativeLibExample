@@ -5,10 +5,13 @@
 #ifndef ANDROIDNATIVELIBEXAMPLE_EXAMPLE_H
 #define ANDROIDNATIVELIBEXAMPLE_EXAMPLE_H
 
+#include <string>
+
 class Example {
 
+
 public:
-    const char* getVersion();
+    std::string getVersion();
 };
 
 

@@ -228,46 +228,210 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 
 
 /* Includes the header in the wrapper code */
- #include "Example.h"
+ #include "NetCxx.h"
  
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-SWIGEXPORT jstring JNICALL Java_com_willkamp_swig_ExampleModuleJNI_Example_1getVersion(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  jstring jresult = 0 ;
-  Example *arg1 = (Example *) 0 ;
-  std::string result;
+SWIGEXPORT void JNICALL Java_com_willkamp_swig_NetCxxModuleJNI_NetCxx_1Response_1body_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+  NetCxx::Response *arg1 = (NetCxx::Response *) 0 ;
+  std::string *arg2 = 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
-  arg1 = *(Example **)&jarg1; 
-  result = (arg1)->getVersion();
-  jresult = jenv->NewStringUTF((&result)->c_str()); 
+  arg1 = *(NetCxx::Response **)&jarg1; 
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
+    return ;
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return ;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
+  if (arg1) (arg1)->body = *arg2;
+}
+
+
+SWIGEXPORT jstring JNICALL Java_com_willkamp_swig_NetCxxModuleJNI_NetCxx_1Response_1body_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jstring jresult = 0 ;
+  NetCxx::Response *arg1 = (NetCxx::Response *) 0 ;
+  std::string *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(NetCxx::Response **)&jarg1; 
+  result = (std::string *) & ((arg1)->body);
+  jresult = jenv->NewStringUTF(result->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_com_willkamp_swig_ExampleModuleJNI_new_1Example(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_com_willkamp_swig_NetCxxModuleJNI_NetCxx_1Response_1error_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+  NetCxx::Response *arg1 = (NetCxx::Response *) 0 ;
+  std::string *arg2 = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(NetCxx::Response **)&jarg1; 
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
+    return ;
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return ;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
+  if (arg1) (arg1)->error = *arg2;
+}
+
+
+SWIGEXPORT jstring JNICALL Java_com_willkamp_swig_NetCxxModuleJNI_NetCxx_1Response_1error_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jstring jresult = 0 ;
+  NetCxx::Response *arg1 = (NetCxx::Response *) 0 ;
+  std::string *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(NetCxx::Response **)&jarg1; 
+  result = (std::string *) & ((arg1)->error);
+  jresult = jenv->NewStringUTF(result->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_com_willkamp_swig_NetCxxModuleJNI_NetCxx_1Response_1response_1code_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  NetCxx::Response *arg1 = (NetCxx::Response *) 0 ;
+  long arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(NetCxx::Response **)&jarg1; 
+  arg2 = (long)jarg2; 
+  if (arg1) (arg1)->response_code = arg2;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_willkamp_swig_NetCxxModuleJNI_NetCxx_1Response_1response_1code_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jint jresult = 0 ;
+  NetCxx::Response *arg1 = (NetCxx::Response *) 0 ;
+  long result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(NetCxx::Response **)&jarg1; 
+  result = (long) ((arg1)->response_code);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_com_willkamp_swig_NetCxxModuleJNI_new_1NetCxx_1Response(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
-  Example *result = 0 ;
+  NetCxx::Response *result = 0 ;
   
   (void)jenv;
   (void)jcls;
-  result = (Example *)new Example();
-  *(Example **)&jresult = result; 
+  result = (NetCxx::Response *)new NetCxx::Response();
+  *(NetCxx::Response **)&jresult = result; 
   return jresult;
 }
 
 
-SWIGEXPORT void JNICALL Java_com_willkamp_swig_ExampleModuleJNI_delete_1Example(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  Example *arg1 = (Example *) 0 ;
+SWIGEXPORT void JNICALL Java_com_willkamp_swig_NetCxxModuleJNI_delete_1NetCxx_1Response(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  NetCxx::Response *arg1 = (NetCxx::Response *) 0 ;
   
   (void)jenv;
   (void)jcls;
-  arg1 = *(Example **)&jarg1; 
+  arg1 = *(NetCxx::Response **)&jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_com_willkamp_swig_NetCxxModuleJNI_new_1NetCxx(JNIEnv *jenv, jclass jcls) {
+  jlong jresult = 0 ;
+  NetCxx *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (NetCxx *)new NetCxx();
+  *(NetCxx **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_com_willkamp_swig_NetCxxModuleJNI_NetCxx_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+  jlong jresult = 0 ;
+  NetCxx *arg1 = (NetCxx *) 0 ;
+  std::string arg2 ;
+  NetCxx::Response result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(NetCxx **)&jarg1; 
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
+    return 0;
+  } 
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return 0;
+  (&arg2)->assign(arg2_pstr);
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
+  result = (arg1)->get(arg2);
+  *(NetCxx::Response **)&jresult = new NetCxx::Response((const NetCxx::Response &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_com_willkamp_swig_NetCxxModuleJNI_NetCxx_1post(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+  jlong jresult = 0 ;
+  NetCxx *arg1 = (NetCxx *) 0 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  NetCxx::Response result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(NetCxx **)&jarg1; 
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
+    return 0;
+  } 
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return 0;
+  (&arg2)->assign(arg2_pstr);
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
+  if(!jarg3) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
+    return 0;
+  } 
+  const char *arg3_pstr = (const char *)jenv->GetStringUTFChars(jarg3, 0); 
+  if (!arg3_pstr) return 0;
+  (&arg3)->assign(arg3_pstr);
+  jenv->ReleaseStringUTFChars(jarg3, arg3_pstr); 
+  result = (arg1)->post(arg2,arg3);
+  *(NetCxx::Response **)&jresult = new NetCxx::Response((const NetCxx::Response &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_com_willkamp_swig_NetCxxModuleJNI_delete_1NetCxx(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  NetCxx *arg1 = (NetCxx *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(NetCxx **)&jarg1; 
   delete arg1;
 }
 

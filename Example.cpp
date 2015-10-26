@@ -3,12 +3,11 @@
 //
 
 #include "Example.h"
-#include <boost/format.hpp>
 
 using namespace std;
 
-const char* Example::getVersion() {
-    const char *version = "0.1";
-    string v = str(boost::format("example version: %1%") % version).c_str();
-    return v.c_str();
+std::string Example::getVersion() {
+    std::string version = "0.1";
+    std::string version_name = "example version: " + version;
+    return version_name;
 }
