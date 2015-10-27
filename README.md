@@ -8,6 +8,7 @@
 * [Android NDK](http://developer.android.com/ndk/index.html)
 * [SWIG](http://www.swig.org/)
 * [LibCurl](http://curl.haxx.se/)
+* [JNI](http://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/jniTOC.html)
 
 ## Build executable for host OS
 mkdir -p build/os; cd build/os
