@@ -16,7 +16,9 @@ cmake ../../ && cmake --build .
 
 ## Build shared library for Android
 
-Requires a [pre-built static libcurl]( https://github.com/manimaul/curl-android-ios/tree/master/prebuilt-with-ssl/android)
+Requires a [pre-built static libcurl]( https://github.com/manimaul/curl-android-ios/tree/master/prebuilt-with-ssl/android).
+
+Requires to update `android-cmake` folder : [android-cmake](https://github.com/manimaul/android-cmake.git)
 
 x86
 
